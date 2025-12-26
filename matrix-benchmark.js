@@ -1,18 +1,13 @@
 
-// complex/matrix-benchmark.js
-// This function performs heavy matrix multiplication to test CPU performance.
-
 export default async function (inputs) {
-    const N = inputs?.size || 100; // Default Matrix size 100x100, or from inputs
+    const N = inputs?.size || 100;
 
-    // Helper to generate random matrix
     const generateMatrix = (size) => {
         return Array.from({ length: size }, () =>
             Array.from({ length: size }, () => Math.random())
         );
     };
 
-    // Matrix multiplication logic
     const multiplyMatrices = (a, b) => {
         const size = a.length;
         const result = Array.from({ length: size }, () => new Array(size).fill(0));
@@ -45,9 +40,9 @@ export default async function (inputs) {
             operation: "Matrix Multiplication",
             matrix_size: `${N}x${N}`,
             duration_ms: duration,
-            // Return a small sample to verify correctness
             sample_result: resultMatrix[0][0],
-            performance: duration < 1000 ? "EXCELLENT" : "GOOD"
+            performance: duration < 1000 ? "EXCELLENT" : "GOOD",
+            size: inputs?.size
         }
     };
 }
