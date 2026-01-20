@@ -1,4 +1,3 @@
-
 export default async function (inputs) {
     const size = inputs.size || 50;
     const m = Array(size).fill(0).map((_, r) => Array(size).fill(0).map((_, c) => (r + c) % 10));
